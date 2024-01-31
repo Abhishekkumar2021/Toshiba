@@ -16,7 +16,6 @@ const Chart = ({endpoint}) => {
                     y: parseFloat(item.profit)
                 }
             })
-            console.log(formattedData)
             setData(formattedData)
         })
         .catch(err => console.log(err))

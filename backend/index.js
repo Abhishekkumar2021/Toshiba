@@ -19,9 +19,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+const whitelist = ['https://toshiba-frontend.vercel.app', 'http://localhost:3000'];
 app.use(cors({
-    origin: 'https://toshiba-frontend.vercel.app',
-    optionsSuccessStatus: 200
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1 || !origin) {
+            return callback(null, true);
+        } else {
+            return callback(new Error('Not allowed by CORS'));
+        }
+    }
 }));
 
 // Routes
