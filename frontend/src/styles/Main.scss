@@ -1,0 +1,320 @@
+@use "../variables" as *;
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    flex: 1;
+    .card{
+        position: relative;
+        background-color: $secondary-background;
+        display: flex;
+        flex-direction: column;
+        min-width: 320px;
+        min-height: 200px;
+        padding: 24px;
+        gap: 8px;
+        flex: 1;
+        border-radius: 16px;
+    }
+
+    .link{
+        color: $dark-orange;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: auto;
+    }
+
+    .title{
+        color: $primary-text;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .main__revenues, .main__deals{
+        > .amount{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 48px;
+            font-weight: 500;
+        }
+        > .description{
+            font-size: 14px;
+            color: $secondary-text;
+        }
+    }
+
+    .main__goals{
+        align-items: center;
+    }
+
+    .customers{
+        min-width: 400px;
+        > .header{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 14px;
+            font-weight: 400;
+            > .filter{
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+        > .chats{
+            
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            > .chat{
+                border-radius: 16px;
+                padding: 16px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                img{
+                    border-radius: 50%;
+                }
+                .text{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    > .name{
+                        color: $primary-text;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    > .message{
+                        font-size: 12px;
+                        font-weight: 400px;
+                        color: $secondary-text;
+                    }
+                }
+            }
+
+            > .options{
+                .left{
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+                background-color: $light-orange;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    .graph-container{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        .graph{
+            .header{
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                justify-content: space-between;
+                width: 100%;
+                font-size: 14px;
+                font-weight: 400;
+                > .filter{
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    
+                    select{
+                        border: none;
+                        background-color: transparent;
+                        color: $primary-text;
+                        font-size: 14px;
+                        font-weight: 400;
+                        &:focus{
+                            outline: none;
+                        }
+
+                        option{
+                            color: $primary-text;
+                            font-size: 14px;
+                            font-weight: 400;
+                            border: none;
+                        }
+                    }
+                }
+            }
+            .content{
+                min-width: 300px;
+                max-width: 100%;
+            }
+        }
+
+        > .small-cards{
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            > .small-card{
+                flex: 1;
+                min-width: 180px;
+                background-color: $secondary-background;
+                border-radius: 16px;
+                padding: 16px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+                > .card_title{
+                    color: $mid-gray;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                }
+            }
+
+            > .first{
+                .date{
+                    color: $primary-text;
+                    font-size: 24px;
+                    font-weight: 500;
+                }
+                
+                .description{
+                    color: #FFA500;
+                    font-size: 16px;
+                }
+            }
+
+            > .second{
+                .year{
+                    color: $primary-text;
+                    font-size: 24px;
+                    font-weight: 500;
+                }
+
+                .description{
+                    color: $secondary-text;
+                    font-size: 14px;
+                }
+            }
+
+            > .third{
+                img{
+                    border-radius: 50%;
+                }
+
+                > .name{
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: $primary-text;
+                }
+
+                > .company{
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: $secondary-text;
+                    margin-top: -4px;
+                }
+            }
+
+
+        }
+    }
+
+    .messages, .bottom_deals, .states{
+        > .title{
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        > .description{
+            font-size: 14px;
+            color: $secondary-text;
+        }
+        > .avatars{
+            display: flex;
+            gap: 8px;
+            > .avatar{
+                padding: 10px;
+                border-radius: 10px;
+                
+                display: flex;
+                align-items: center;
+                img{
+                    border-radius: 50%;
+                }
+
+                &:nth-child(1), &:nth-child(2){
+                    background-color: $light-orange;
+                }
+            }
+        }
+
+        .bars{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 14px;
+            .bar{
+                background: $gradient;
+                display: flex;
+                padding: 6px 8px;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 8px;
+                border-radius: 4px;
+
+                &:nth-child(1){
+                    width: 240px;
+                }
+
+                &:nth-child(2){
+                    width: 190px;
+                }
+
+                &:nth-child(3){
+                    width: 160px;
+                }
+
+                &:nth-child(4){
+                    width: 130px;
+                }
+            }
+        }
+
+        .tags{
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            > .tag{
+                background-color: $light-orange;
+                padding: 8px 10px;
+                border-radius: 16px;
+                font-size: 12px;
+                font-weight: 500;
+                color: $dark-orange;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+        
+    }
+
+    .bottom_deals{
+        min-width: 400px;
+    }
+}
+
+@media (max-width: 768px){
+    .main{
+        .graph-container{
+            flex: 1;
+        }
+    }
+}
