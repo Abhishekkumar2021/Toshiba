@@ -3,9 +3,9 @@
 .sidebar{
     position:sticky;
     top: 16px;
-    left: 16px;
     height: calc(100vh - 32px);
     display: flex;
+    z-index: 1000;
     flex-direction: column;
     border-radius: 16px;
     background-color: $secondary-background;
@@ -128,13 +128,13 @@
 
 
 
-@media (max-width: 768px){
+@media (max-width: 1024px){
     .menu{
         display: flex;
     }
     .sidebar{
-        width: 0;
         position: fixed;
+        width: 0;
         top: 10px;
         right: 10px;
         box-shadow:rgb(0, 0, 0, 0.2) 0px 5px 10px;
