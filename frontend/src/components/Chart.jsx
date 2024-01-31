@@ -6,7 +6,7 @@ import '../styles/Chart.scss'
 const Chart = ({endpoint}) => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:8080/api/${endpoint}`)
+        fetch(`https://toshiba-backend.onrender.com/api/${endpoint}`)
         .then(res => res.json())
         .then(dataObject => {
             const {data} = dataObject

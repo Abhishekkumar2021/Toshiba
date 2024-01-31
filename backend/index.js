@@ -7,11 +7,11 @@ const __dirname = path.resolve();
 const app = express();
 
 // Setting up the port
-const PORT = 8080
+const PORT = process.env.PORT || 8080;
 
 // Listening to the port
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+    console.log(`Server running at PORT ${PORT}`);
 });
 
 // Serving static files
@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'https://toshiba-frontend.vercel.app/'
 }));
 
 // Routes
