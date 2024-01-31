@@ -20,7 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: 'https://toshiba-frontend.vercel.app/'
+    origin: 'https://toshiba-frontend.vercel.app',
+    optionsSuccessStatus: 200
 }));
 
 // Routes
