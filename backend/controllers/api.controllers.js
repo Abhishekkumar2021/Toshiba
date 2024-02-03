@@ -34,7 +34,12 @@ export const getSampleData = AsyncHandler(async (req, res, next) => {
     res.status(200).json(new ApiResponse(200, "OK", json.slice(0, 1000)))
 })
 
-//  Drill down to day level i.e whatever transactions are there in a day sum them up and create another onject for them as {timestamp, profit}, timestamp will be the day's timestamp and profit will be the sum of all the transactions in that day. the transactions are already sorted by timestamp so you can use that to your advantage.
+//  Drill down to day level i.e whatever transactions are there 
+// in a day sum them up and create another onject for them as 
+// {timestamp, profit}, timestamp will be the day's timestamp 
+// and profit will be the sum of all the transactions in that 
+// day. the transactions are already sorted by timestamp so you 
+// can use that to your advantage.
 export const getDayLevel = AsyncHandler(async (req, res) => {
     const json = await csvToJson(csvPath)
     const dayLevel = json.reduce((acc, curr) => {
